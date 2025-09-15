@@ -7,6 +7,7 @@
 import copy
 import numpy
 import os
+import torch
 
 from .base_proc import BaseInferenceProcess
 
@@ -31,7 +32,7 @@ class PageSeparation(BaseInferenceProcess):
 
         config_path = self.cfg['page_separation']['config_path']
         checkpoint = self.cfg['page_separation']['weight_path']
-        device = 'cuda:0'
+        device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
         self._detector = GutterDetector(config_path, checkpoint, device)
         self._run_submodule_inference = divide_facing_page_with_cli
 

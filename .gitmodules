@@ -32,5 +32,11 @@
 	branch = master
 [submodule "submodules/text_recognition_lightning"]
 	path = submodules/text_recognition_lightning
-	url = https://github.com/ndl-lab/text_recognition_lightning
+	url = https://github.com/lithium0003/text_recognition_lightning
 	branch = master
+[submodule "submodules/mmdetection"]
+	path = submodules/mmdetection
+	url = https://github.com/open-mmlab/mmdetection.git
+[submodule "submodules/Mykytea-python"]
+	path = submodules/Mykytea-python
+	url = https://github.com/chezou/Mykytea-python.git
