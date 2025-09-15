@@ -12,7 +12,11 @@ pip install -U 'transformers[ja]'
 (mkdir -p submodules/ndl_layout/models && cd submodules/ndl_layout/models && curl -LO https://lab.ndl.go.jp/dataset/ndlocr_v2/ndl_layout/ndl_retrainmodel.pth)
 (mkdir -p submodules/separate_pages_mmdet/models && cd submodules/separate_pages_mmdet/models && curl -LO https://lab.ndl.go.jp/dataset/ndlocr_v2/separate_pages_mmdet/epoch_180.pth)
 (
-    cd build_work/kytea-0.4.7
+    cd build_work
+    curl -LO http://www.phontron.com/kytea/download/kytea-0.4.7.tar.gz
+    tar xvf kytea-0.4.7.tar.gz
+    patch < patch.diff
+    cd kytea-0.4.7
     ./configure --prefix=$prefix
     make -j
     make install
